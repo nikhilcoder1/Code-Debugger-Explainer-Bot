@@ -40,7 +40,3 @@ async def process_code(request: CodeRequest):
     prompt = f"Please {request.task} this {request.language} code:\n\n{request.code}"
     response = model.generate_content(prompt)
     return {"response": response.text}
-
-@app.get("/")
-def read_root():
-    return {"message": "Hello World"}
